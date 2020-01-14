@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<body>
+
+<h2>JavaScript kalkulator</h2>
+
+
+    <input type="text" placeholder="Prvi broj" id='prvi'>
+    <select id = "operacije">
+        <option value="sabiranje">Sabiranje</option>
+        <option value="oduzimanje">Oduzimanje</option>
+        <option value="mnozenje">Mnozenje</option>
+        <option value="deljenje">Deljenje</option>
+    </select>
+    <input type="text" placeholder="Drugi broj" id='drugi'>
+    <input type="submit" value="Submit" onclick="submit()">
+    <input type="text" readonly id="rez">    
+
+
+
+<script>
+    var prvi = document.getElementById('prvi');
+    var drugi = document.getElementById('drugi');
+    var select = document.getElementById('operacije');
+    var rezultat = document.getElementById('rez');
+    function submit(){
+        var operacija = select.children[select.selectedIndex].value;
+        var prviBroj = parseFloat(prvi.value);
+        var drugiBroj = parseFloat(drugi.value);
+        
+        
+        switch (operacija){
+            case 'sabiranje':
+                rezultat.value=prviBroj+drugiBroj;
+                break;
+            case 'oduzimanje':
+                rezultat.value=prviBroj-drugiBroj;
+                break;
+            case 'mnozenje':
+                rezultat.value=prviBroj*drugiBroj;
+                break;
+            case 'deljenje':
+                rezultat.value=prviBroj/drugiBroj;
+                break;
+        }
+    }
+    
+    
+</script>
+
+</body>
